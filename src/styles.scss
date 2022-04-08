@@ -14,6 +14,11 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+html,
+body {
+    overflow: hidden;
+}
+
 @media (max-width: 720px) {
     .hide-mobile {
         display: none;

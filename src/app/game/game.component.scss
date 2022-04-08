@@ -109,3 +109,92 @@ app-player-mobile {
 .preloadImage {
     display: none;
 }
+
+.game-over-main-container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #edb21b, #342706 30%, #726e64 40%, #3c2d05 55%, #f7e0a6 70%, #ffb700 90%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    /* max-height: 90vh; */
+    aspect-ratio: 0.6;
+    padding: 7px;
+    box-shadow: inset 2px 3px 2px rgb(255 255 255 / 40%), inset -2px -3px 2px rgb(0 0 0 / 10%);
+    animation: show-gameover 700ms ease-in-out 700ms forwards;
+    @media (max-width: 450px) {
+        width: 100%;
+        aspect-ratio: none;
+        height: 100vh;
+        max-height: 100vh;
+    }
+    .game-over-screen {
+        display: flex;
+        align-items: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        position: absolute;
+        justify-content: center;
+        flex-direction: column;
+        transform: scale(1);
+        margin-top: 10;
+        overflow: hidden;
+        @keyframes show-gameover {
+            100% {
+                opacity: 1;
+            }
+        }
+        .gameOver {
+            margin-bottom: 10px;
+            img {
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+            }
+        }
+        span {
+            background: url('/assets/img/fire.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fire .8s linear infinite;
+            font-size: 25px;
+        }
+        @keyframes fire {
+            0% {
+                background-position: 0% 50%;
+            }
+            0% {
+                background-position: 100% -50%;
+            }
+        }
+        .start-btn {
+            width: 50%;
+            height: 50px;
+            font-size: 2rem;
+            font-size: clamp(24px, 5vw, 2rem);
+            width: 50%;
+            height: 50px;
+            background: linear-gradient(125deg, #977e40 40%, #ffa707 70%, #503d0c 90%);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px rgba($color: #000000, $alpha: 0.2), inset 2px 2px 2px rgba($color: #ffffff, $alpha: 0.5);
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient( 125deg, rgb(255, 198, 54) 40%, rgb(255, 214, 111) 70%, rgb(255, 198, 54) 90%);
+                box-shadow: 5px 5px 13px rgba($color: #000000, $alpha: 0.2), inset 2px 2px 2px rgba($color: #ffffff, $alpha: 0.5);
+            }
+        }
+    }
+}

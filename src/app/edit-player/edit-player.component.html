@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Add new player</h1>
-<img class="profile-picture" [mat-dialog-close]="picture" *ngFor="let picture of allProfilPicture" src="./assets/img/profile/{{ picture }}">
+<img class="profile-picture" [mat-dialog-close]="picture" *ngFor="let picture of allProfilPicture" src="assets/img/profile/{{ picture }}">
 
 <div mat-dialog-actions>
     <button mat-button (click)="dialogRef.close()" cdkFocusInitial>close</button>

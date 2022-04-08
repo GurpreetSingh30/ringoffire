@@ -16,6 +16,7 @@ export class StartScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   newGame(){
     //start game
     let game = new Game();
